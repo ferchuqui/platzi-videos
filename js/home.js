@@ -44,7 +44,7 @@ Promise.race([
 
 
 
-$.ajax('https://randomuser.me/api/sdfdsfdsfs', {
+$.ajax('https://randomuser.me/api', {
   method: 'GET',
   success: function(data) {
     console.log(data)
@@ -54,7 +54,7 @@ $.ajax('https://randomuser.me/api/sdfdsfdsfs', {
   }
 })
 
-fetch('https://randomuser.me/api/dsfdsfsd')
+fetch('https://randomuser.me/api')
   .then(function (response) {
     // console.log(response)
     return response.json()
@@ -82,4 +82,20 @@ fetch('https://randomuser.me/api/dsfdsfsd')
   const dramaList = await getData('https://yts.am/api/v2/list_movies.json?genre=drama')
   const animationList = await getData('https://yts.am/api/v2/list_movies.json?genre=animation')
   console.log(actionList, dramaList, animationList)
+
+  const $actionContainer = document.querySelector('#action');
+  const $dramaContainer = document.getElementById('#drama');
+  const $animationContainer = document.getElementById('#animation');
+
+  const $featuringContainer = document.getElementById('#featuring');
+  const $form = document.getElementById('#form');
+  const $home = document.getElementById('#home');
+
+  const $modal=document.getElementById('modal')
+  const $overlay=document.getElementById('overlay')
+  const $hideModal=document.getElementById('hide-modal')
+
+  const $modalTitle = $modal.querySelector('h1')
+  const $modalImage = $modal.querySelector('img')
+  const $modalDescription = $modal.querySelector('p')
 })()
